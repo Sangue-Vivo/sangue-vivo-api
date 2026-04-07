@@ -1,0 +1,27 @@
+export const RANK_THRESHOLDS = {
+  GOTA: 0,
+  DOADOR: 200,
+  AMIGO: 400,
+  GUARDIAO: 1000,
+  SALVADOR: 1800,
+  LENDA: 2500,
+  HEROI_DE_SANGUE: 4000,
+} as const;
+
+export const RANK_ORDER = [
+  'GOTA',
+  'DOADOR',
+  'AMIGO',
+  'GUARDIAO',
+  'SALVADOR',
+  'LENDA',
+  'HEROI_DE_SANGUE',
+] as const;
+
+export const XP_VALUES = {
+  BASE_DONATION: 100,
+  CAUSE_BONUS: 50,
+  URGENT_CAUSE_BONUS: 30,
+};
+
+export const DONATION_COOLDOWN_DAYS = 90;
