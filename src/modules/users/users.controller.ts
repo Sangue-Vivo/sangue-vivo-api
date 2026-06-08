@@ -20,6 +20,15 @@ export async function updateProfile(req: Request, res: Response, next: NextFunct
   }
 }
 
+export async function changePassword(req: Request, res: Response, next: NextFunction) {
+  try {
+    await usersService.changePassword(req.user!.id, req.body.currentPassword, req.body.newPassword);
+    return success(res, { message: 'Senha alterada com sucesso.' });
+  } catch (err: any) {
+    return error(res, err.message, 400);
+  }
+}
+
 export async function getRanking(req: Request, res: Response, next: NextFunction) {
   try {
     const page = Math.max(parseInt(req.query.page as string) || 1, 1);
