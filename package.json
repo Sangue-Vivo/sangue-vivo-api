@@ -5,9 +5,10 @@
   "main": "index.js",
   "scripts": {
     "dev": "tsx watch src/server.ts",
-    "build": "tsup src/server.ts --format cjs --dts",
+    "build": "tsup src/server.ts --format cjs",
     "start": "node dist/server.js",
-    "seed": "tsx src/database/seeders/seed.ts"
+    "seed": "tsx src/database/seeders/seed.ts",
+    "create-accounts": "tsx src/database/seeders/createAccounts.ts"
   },
   "keywords": [],
   "author": "",
