@@ -48,6 +48,15 @@ export async function getRankDistribution(req: Request, res: Response) {
   }
 }
 
+export async function listDonations(req: Request, res: Response) {
+  try {
+    const data = await adminService.listAllDonations();
+    return success(res, { donations: data });
+  } catch (err: any) {
+    return error(res, err.message, 400);
+  }
+}
+
 export async function exportUsers(req: Request, res: Response) {
   try {
     const data = await adminService.exportUsers();

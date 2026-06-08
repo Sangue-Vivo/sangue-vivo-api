@@ -91,6 +91,20 @@ export async function getRankDistribution() {
   return results;
 }
 
+export async function listAllDonations() {
+  const donations = await Donation.findAll({
+    include: [
+      { model: User },
+      {
+        model: (await import('../../database/models/CauseDonation')).default,
+        include: [{ model: Cause }],
+      },
+    ],
+    order: [['createdAt', 'DESC']],
+  });
+  return donations.map((d) => d.toJSON());
+}
+
 export async function exportUsers() {
   const users = await User.findAll({
     attributes: ['id', 'name', 'email', 'cpf', 'bloodType', 'gender', 'birthDate', 'university', 'course', 'role', 'xp', 'rank', 'totalDonations', 'consecutiveStreak', 'isEligible', 'lastDonationDate', 'nextEligibleDate', 'createdAt', 'updatedAt'],

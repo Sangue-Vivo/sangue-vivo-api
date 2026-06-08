@@ -12,6 +12,7 @@ router.get('/stats/donations-by-month', adminController.getDonationsByMonth);
 router.get('/stats/blood-distribution', adminController.getBloodDistribution);
 router.get('/stats/university-stats', adminController.getUniversityStats);
 router.get('/stats/rank-distribution', adminController.getRankDistribution);
+router.get('/donations', adminController.listDonations);
 router.get('/export/users', adminController.exportUsers);
 router.get('/export/donations', adminController.exportDonations);
 router.get('/export/causes', adminController.exportCauses);
